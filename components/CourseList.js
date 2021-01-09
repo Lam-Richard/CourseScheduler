@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ScrollView, View, StyleSheet, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import TermSelector from './TermSelector';
 import CourseSelector from './CourseSelector';
-import { terms, termMap, getCourseTerm } from '../utils/course';
+import { terms, getCourseTerm } from '../utils/course';
 
 const CourseList = ({courses, view}) => {
     const [selectedTerm, setSelectedTerm] = useState('Fall');
@@ -16,15 +16,5 @@ const CourseList = ({courses, view}) => {
     </View>
     )
   }
-
-const styles = StyleSheet.create({
-    courseList: {
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        },
-});
 
 export default CourseList;

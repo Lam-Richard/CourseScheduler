@@ -4,7 +4,6 @@ import CourseList from '../components/CourseList';
 import UserContext from '../UserContext';
 import { firebase } from '../firebase';
 
-const db = firebase.database().ref();
 
 const fixCourses = json => ({
   ...json,

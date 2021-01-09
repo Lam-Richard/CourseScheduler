@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import Form from '../components/Form';
 import * as Yup from 'yup';
 import  { firebase } from '../firebase';
 
-const Field = ({label, value}) => {
-  return (
-    <View style={styles.fieldContainer}>
-      <Text style={styles.label}>{label}</Text>
-      <Text style={styles.field}>{value}</Text>
-    </View>
-  );
-};
 
 const validationSchema = Yup.object().shape({
     id: Yup.string()
@@ -27,8 +19,7 @@ const validationSchema = Yup.object().shape({
       .label('Title'),
   });
   
-
-const CourseEditScreen = ({ navigation, route }) => {
+const CourseEditScreen = ({ route }) => {
   const course = route.params.course;
   const [submitError, setSubmitError] = useState('');
 
@@ -84,9 +75,6 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'center',
     backgroundColor: '#ccccb3',
-    
-    
-
   },
   field: {
     height: 50,
@@ -101,8 +89,6 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    
-    
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     elevation: 4,

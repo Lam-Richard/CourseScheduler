@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Course from './Course';
 import { hasConflict } from '../utils/course';
 
-const CourseSelector = ({courses, isDisabled, view}) => {
+const CourseSelector = ({courses, view}) => {
     const toggle = course => setSelected(selected => (
       selected.includes(course) ? selected.filter(x => x !== course) : [...selected, course]
     ));
